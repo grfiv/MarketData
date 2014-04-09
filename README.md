@@ -26,4 +26,7 @@ Vasicek One-factor short-rate term-structure model
 a variety of functions like convexity, BEY, etc. to complement the built-in functions  
 
 * Treasury_Yields.php  
-PHP function to retrieve Treasury yields
+PHP function to retrieve Treasury yields  
+
+* Equity_Quotes.php  
+PHP function to get equity quotes from Yahoo

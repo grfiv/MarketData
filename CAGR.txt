@@ -1,0 +1,49 @@
+Compound Annual Growth Rate
+
+Continuous compound annual rate = ln ( ( end_price + distributions ) / start_price ) / T
+      where T = decimal fraction of years from start to end
+
+CAGR = ( (Ending_Value / Starting_value) ^ ( 1 / (Ending_date - Starting_date) ) ) - 1
+
+CAGR = ( ( Value(tn) / Value(t0) )       ^ ( 1 / (tn - t0) ) ) - 1
+
+CAGR = ( ( end / start )                 ^ ( 1 / (COUNT(start:end)-1) )  ) - 1
+
+NOTE: you may want to add distributions to "end"
+
+NOTE: This is discrete per-period compounding
+
+-----------------------------------------------------------------------------------------------
+
+'
+' TI-89 function Define cagr(start,end,periods) = ((end/start) ^ (1/periods)) - 1
+'
+' 2nd > VAR-LINK
+'
+
+Developer > Visual Basic
+Insert > Module
+
+Function CAGR(Rng As Range) As Double
+'Range is asset values in each period
+'not growth rates
+
+Dim EndingValue As Double, StartingValue As Double, Periods As Integer
+
+StartingValue = Rng.Cells(1, 1)
+
+' If vertical
+If (Rng.Rows.Count > 1 And Rng.Columns.Count = 1) Then
+  EndingValue = Rng.Cells(Rng.Rows.Count, 1)
+  Periods = Rng.Rows.Count - 1
+End If
+
+' If horizontal
+If (Rng.Rows.Count = 1 And Rng.Columns.Count > 1) Then
+  EndingValue = Rng.Cells(1, Rng.Columns.Count)
+  Periods = Rng.Columns.Count - 1
+End If
+
+CAGR = ((EndingValue / StartingValue) ^ (1 / Periods)) - 1
+
+End Function

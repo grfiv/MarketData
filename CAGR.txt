@@ -3,6 +3,8 @@ Compound Annual Growth Rate
 Continuous compound annual rate = ln ( ( end_price + distributions ) / start_price ) / T
       where T = decimal fraction of years from start to end
 
+=LN( Ending_Value / Starting_Value )/(( Current_Date - Starting_Date ) / 365)
+
 CAGR = ( (Ending_Value / Starting_value) ^ ( 1 / (Ending_date - Starting_date) ) ) - 1
 
 CAGR = ( ( Value(tn) / Value(t0) )       ^ ( 1 / (tn - t0) ) ) - 1

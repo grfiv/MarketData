@@ -23,4 +23,7 @@ Get the current yields for any section of the Treasury yield curve
 Vasicek One-factor short-rate term-structure model  
 
 * bond_formulas.bas  
-a variety of functions like convexity, BEY, etc. to complement the built-in functions
+a variety of functions like convexity, BEY, etc. to complement the built-in functions  
+
+* Treasury_Yields.php  
+PHP function to retrieve Treasury yields
